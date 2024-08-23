@@ -1,0 +1,26 @@
+!################### 			LIST OF EXPERIMENT PARAMETERS             ##########################!
+&PARPHYS
+ WAVEL = 632.8,			!## WAVELENGHT (real)
+ REFMED = 1.331,		!## REFRACTIVE INDEX OF THE MEDIUM (real)
+ HomoSphe = .TRUE.,		!## IS THE SCATTER A HOMOGENEOUS SPHERE? (logical= .TRUE. or .FALSE.)
+ 						!## IF HomoSphe == .FALSE. YOU MUST HAVE A RADIAL REFRACTIVE INDEX PROFILE 
+ NANG = 1800,			!## NUMBER OF POINTS TO CALCULATE BETWEEN 0° AND 180° (integer)
+ /
+!###################################################################################################!
+!###################		---- homogeneous sphere parameters ----			########################!
+&HOMOSPHERE
+ Rp = 251.5,				!## PARTICLE'S RADIUS - SAME UNITS USED FOR WAVELENGHT (real)
+ np = (1.59,0.)			!## PARTICLE'S REFRACTIVE INDEX (Re,Im)
+ /
+!###################################################################################################!
+!##################			---- MULTI-LAYER SPHERE PARAMETERS ----			########################!
+!##################   YOU NEED A RI PROFILE TABLE NAMED AS: RIprofile.dat   ########################!
+!### The table must has columns [Radius,RI(Radius)] without headers.						    ####!
+!### For radius units use same units used for wavelenght.										####!
+!### Numerical format -------->  [ Real |SPACE OR TAB| (Re,Im) ] 								####!
+!### If the table is hasn't this formar You must take action to guarantee this.					####!
+&MLSPHERE
+ Aly = 30,				!## NUMBER OF RADIAL LAYERS >= 2 (integer) - SAME ROWS' NUMBER IN RI TABLE
+ /
+!###########################			 END OF LISTS            ###################################!
+!###################################################################################################!

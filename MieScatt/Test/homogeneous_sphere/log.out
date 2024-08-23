@@ -1,0 +1,26 @@
+ ---------------------------------------------------------------------------------------------
+ ------------------------- Light scattering by single sphere program -------------------------
+ ---------------------------------------------------------------------------------------------
+
+ ---------------------------------------    INPUTS   -----------------------------------------
+
+ You set the units. Consider them in the results.
+ WAVELENGTH = 632.800
+ REFMED =   1.3310
+ WAVE NUM, K=  0.0132
+ IS A HOMOGENEOUS SPHERE?  T
+ POINTS' NUMBER TO CALCULATE BETWEEN 0° AND 180° =  1800
+
+ -------------------------------- HOMOGENEOUS SPHERE -----------------------------------------
+ Particle's Radius = 251.5
+ Size parameter =  3.3
+ Particle's Refractive Index = (1.590,0.000)
+ Relative Refractive Index = (1.195,0.000)
+
+ ----- MIE SCATTERING RESULTS -----
+ Scattering efficency Qsca =  7.70545E-01
+ Extintion efficency  Qext =  7.70545E-01
+ Absortion efficency  Qabs =  0.00000E+00
+ Backscattering eff. Qback =  1.62310E-02
+ Form factor and scattering amplitudes as a function of scattering angle are in the .dat file
+ --------------------------------------- END ------------------------------------------------
