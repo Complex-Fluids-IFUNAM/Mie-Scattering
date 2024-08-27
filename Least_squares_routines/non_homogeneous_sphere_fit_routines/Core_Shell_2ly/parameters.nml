@@ -1,0 +1,37 @@
+!################### 			LIST OF EXPERIMENT PARAMETERS             ##########################
+&PARPHYS
+ WAVEL = 632.8,			!## WAVELENGHT (real)
+ REFMED = 1.331,		!## REFRACTIVE INDEX OF THE MEDIUM (real) 
+ HRAD = 175.3,			!## SAME UNITS USED FOR WAVELENGHT (real)
+ CHI2MIN=  1.E3,		!## GOODNESS OF FIT INITIAL THRESHOLD (Real)
+ /
+!###################################################################################################
+!##################				 LIST OF PARAMETERS TO FIT 					######################## 
+!##################     $$$$$$  ONLY FOR TWO-LAYER SPHERES    $$$$$$		########################
+!##################  IF MAX AND MIN ARE IQUALS THEN THE PARAMETER IS FIXED 	########################
+!##################     ----	CORE OF THE SHELL PARAMETERS 	----		########################
+&PARFITCORE
+ RCMAX=  43.,			!## MAX RADIUS OF THE core of shell - SAME UNITS USED FOR WAVELENGHT (Real)
+ RCMIN=  43.,			!## MIN RADIUS OF THE core of shell - SAME UNITS USED FOR WAVELENGHT (Real)
+ RCSTEP=  1.,			!## STEP OF SEARCH FOR PARTICLE RADIUS
+ NMAX=(1.59,0.),		!## MAX REFRACTIVE INDEX OF THE PARTICLE (Re,Im) 
+ NMIN=(1.59,0.),		!## MIN REFRACTIVE INDEX OF THE PARTICLE (Re,Im) >= REFMED (REAL PART)
+ NSTEP=(0.01,0.),		!## STEP OF SEARCH FOR REFRACTIVE INDEX
+ STDGCMAX=  1.03,		!## MAX POLYDISPERSITY - MUST >= 1. (Real) - LOG NORMAL STD. DEV.
+ STDGCMIN=  1.03,		!## MIN POLYDISPERSITY - MUST >= 1. (Real) - LOG NORMAL STD. DEV.
+ STDGCSTEP=  0.01,		!## STEP OF SEARCH FOR POLYDISPERSITY
+ /
+!##################     		----	SHELL PARAMETERS 	----	   		########################
+&PARFITSHELL
+ RSMAX = 175.,			!## MAX RADIUS OF THE shell - SAME UNITS USED FOR WAVELENGHT (Real)
+ RSMINPAR = 150.,		!## MIN RADIUS OF THE shell - IF RSMIN = 0, THEN SEARCH FROM RC + 1.
+ RSSTEP = 0.1,			!## STEP OF SEARCH FOR PARTICLE RADIUS
+ NSMAX=(1.460,0.),		!## MAX REFRACTIVE INDEX OF THE SHELL (Re,Im) 
+ NSMIN=(1.332,0.),		!## MIN REFRACTIVE INDEX OF THE SHELL (Re,Im) 
+ NSSTEP=(0.001,0.),		!## STEP OF SEARCH FOR REFRACTIVE INDEX					
+ STDGSMAX = 1.11,		!## MAX POLYDISPERSITY - MUST >= 1. (Real) - LOG NORMAL STD. DEV.
+ STDGSMIN = 1.01,		!## MIN POLYDISPERSITY - MUST >= 1. (Real) - LOG NORMAL STD. DEV.
+ STDGSSTEP = 0.01,		!## STEP OF SEARCH FOR POLYDISPERSITY
+ /
+!###########################			 END OF LISTS            ###################################
+!###################################################################################################

@@ -1,0 +1,22 @@
+!################### 			LIST OF EXPERIMENT PARAMETERS             ##########################
+&PARPHYS
+ WAVEL = 632.8,			!## WAVELENGHT (real)
+ REFMED = 1.33,			!## REFRACTIVE INDEX OF THE MEDIUM (real)
+ HRAD = 150.,			!## HYDRODINAMIC RADIUS OF THE SPHERE - SAME UNITS LIKE WAVELENGHT (real)
+ /
+!###################################################################################################
+!##################				 LIST OF PARAMETERS TO FIT 					######################## 
+!##################  IF MAX AND MIN ARE IQUALS THEN THE PARAMETER IS FIXED 	########################
+&PARFIT
+ NMAX=(1.59,0.),		!## MAX REFRACTIVE INDEX OF THE PARTICLE (Re,Im) 
+ NMIN=(1.59,0.),		!## MIN REFRACTIVE INDEX OF THE PARTICLE (Re,Im)
+ NSTEP=(0.01,0.),		!## STEP OF SEARCH FOR REFRACTIVE INDEX
+ RCMAX=  150.,			!## MAX RADIUS OF THE PARTICLE - SAME UNITS LIKE WAVELENGHT (Real)
+ RCMIN=  10.,			!## MIN RADIUS OF THE PARTICLE - SAME UNITS LIKE WAVELENGHT (Real)
+ RCSTEP=  1.,			!## STEP OF SEARCH FOR PARTICLE RADIUS
+ STDGCMAX=  1.10,		!## MAX POLYDISPERSITY - MUST > 1. (Real)
+ STDGCMIN=  1.01,		!## MIN POLYDISPERSITY - MUST > 1. (Real)
+ STDGCSTEP=  0.01,		!## STEP OF SEARCH FOR POLYDISPERSITY
+ CHI2MIN=  1.E10,		!## GOODNESS OF FIT INITIAL THRESHOLD (Real)
+ /
+!###########################			 END OF LISTS            ##################################

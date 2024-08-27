@@ -1,0 +1,46 @@
+!################### 			LIST OF EXPERIMENT PARAMETERS             ##########################
+&PARPHYS
+ WAVEL = 632.8,			!## WAVELENGHT (real)
+ REFMED = 1.331,		!## REFRACTIVE INDEX OF THE MEDIUM (real)
+ /
+!###################################################################################################
+!###################				LIST OF CORE PARAMETERS				  ##########################
+&PARCORE
+ Rps = 49.5,			!## CORE RADIUS - SAME UNITS LIKE WAVELENGHT (real)
+ nps = (1.59,0.)		!## REFRACTIVE INDEX OF THE CORE PARTICLE (Re,Im)
+ stdgps = 1.0 			!## POLYDISPERSITY OF CORE >= 1.0 (Real) - LOG NORMAL STD. DEV.
+ HRAD = 315.,			!## HYDRODINAMIC RADIUS OF THE SPHERE - SAME UNITS LIKE WAVELENGHT (real)
+ /
+!###################################################################################################
+!###################################################################################################
+!##################				 LIST OF PARAMETERS TO FIT 					######################## 
+!##################   $$$$$$  ONLY FOR GAUSSIAN R. I. PROFILE  $$$$$$		########################
+!##################  IF MAX AND MIN ARE IQUALS THEN THE PARAMETER IS FIXED 	########################
+!##################     ----	CORE OF THE SHELL PARAMETERS 	----		########################
+&PARFITCOREOFSHELL
+ RCMAX=  89.,			!## MAX RADIUS OF THE core of shell - SAME UNITS LIKE WAVELENGHT (Real)
+ RCMIN=  87.,			!## MIN RADIUS OF THE core of shell - SAME UNITS LIKE WAVELENGHT (Real)
+ RCSTEP=  1.,			!## STEP OF SEARCH FOR PARTICLE RADIUS
+ NMAX=(1.34,0.),		!## MAX REFRACTIVE INDEX OF THE PARTICLE (Re,Im) 
+ NMIN=(1.34,0.),		!## MIN REFRACTIVE INDEX OF THE PARTICLE (Re,Im) >= REFMED (REAL PART)
+ NSTEP=(0.01,0.),		!## STEP OF SEARCH FOR REFRACTIVE INDEX
+ STDGCMAX=  1.11,		!## MAX POLYDISPERSITY - MUST >= 1. (Real) - LOG NORMAL STD. DEV.
+ STDGCMIN=  1.01,		!## MIN POLYDISPERSITY - MUST >= 1. (Real) - LOG NORMAL STD. DEV.
+ STDGCSTEP=  0.01,		!## STEP OF SEARCH FOR POLYDISPERSITY
+ /
+!##################     		----	SHELL PARAMETERS 	----	   		########################
+&PARFITSHELL
+ RSMAX = 400.,			!## MAX RADIUS OF THE shell - SAME UNITS LIKE WAVELENGHT (Real)
+ RSMINPAR = 300.,			!## MIN RADIUS OF THE shell - IF RSMIN = 0, THEN SEARCH FROM RC + 1.
+ RSSTEP = 1.,			!## STEP OF SEARCH FOR PARTICLE RADIUS
+ STDGSMAX = 1.11,		!## MAX POLYDISPERSITY - MUST >= 1. (Real) - LOG NORMAL STD. DEV.
+ STDGSMIN = 1.01,		!## MIN POLYDISPERSITY - MUST >= 1. (Real) - LOG NORMAL STD. DEV.
+ STDGSSTEP = 0.01,		!## STEP OF SEARCH FOR POLYDISPERSITY
+ /
+!##################			    ---- MULTI-LAYER MIE FIT PAR ----			########################
+&PARMLMIEFIT
+ Aly = 12,				!## NUMBER OF RADIAL LAYERS >= 3 (integer)
+ CHI2MIN=  1.E3,		!## GOODNESS OF FIT INITIAL THRESHOLD (Real)
+ /
+!###########################			 END OF LISTS            ###################################
+!###################################################################################################
